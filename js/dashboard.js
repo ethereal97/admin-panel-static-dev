@@ -1,10 +1,5 @@
-import "../app.js";
-
-const FAKER_USER_URL = 'https://randomuser.me/api/';
-// const FAKER_API = 'VT4F-ISFE-L29J-6O3H';
-// const FAKER_URL = `https://randomapi.com/api/{path}?key=${FAKER_API}`;
-
-let user = sessionStorage.getItem(btoa('user'));
+const FAKER_API = 'VT4F-ISFE-L29J-6O3H';
+const FAKER_USER_URL = 'https://randomuser.me/api/?key=' + FAKER_API;
 
 const app = new Vue({
     el: "#root",
@@ -62,6 +57,8 @@ if (flash_notification) {
     app.notification.push('');
     sessionStorage.removeItem('__flash_notification_message');
 }*/
+
+let user = sessionStorage.getItem(btoa('user'));
 
 if (user) {
     user = JSON.parse(user);
